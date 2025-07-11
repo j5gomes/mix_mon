@@ -1,0 +1,2 @@
+defmodule MixMon do
+end
