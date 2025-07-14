@@ -28,4 +28,8 @@ defmodule MixMon.Game.Status do
   def print_move_message(:player, :attack, damage) do
     IO.puts("\n===== The Computer attacked the player dealing #{damage} damage. =====\n")
   end
+
+  def print_move_message(player, :heal, hp) do
+    IO.puts("\n===== The #{player} healed itself to #{hp} point. =====\n")
+  end
 end
