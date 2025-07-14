@@ -1,15 +1,23 @@
 defmodule MixMon.Player do
-  @enforce_keys [:hp, :name, :move_rnd, :move_avg, :move_heal]
+  @player_attibutes [
+    :hp,
+    :move_avg,
+    :move_heal,
+    :move_rnd,
+    :name
+  ]
+  @max_hp 100
 
-  defstruct [:hp, :name, :move_rnd, :move_avg, :move_heal]
+  @enforce_keys @player_attibutes
+  defstruct @player_attibutes
 
-  def build(name, move_rnd, move_avg, move_heal) do
+  def create(name, move_rnd, move_avg, move_heal) do
     %MixMon.Player{
-      hp: 100,
-      name: name,
-      move_rnd: move_rnd,
+      hp: @max_hp,
       move_avg: move_avg,
-      move_heal: move_heal
+      move_heal: move_heal,
+      move_rnd: move_rnd,
+      name: name
     }
   end
 end
