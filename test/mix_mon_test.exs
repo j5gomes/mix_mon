@@ -3,6 +3,7 @@ defmodule MixMonTest do
 
   import ExUnit.CaptureIO
 
+  alias MixMon.Game
   alias MixMon.Player
 
   describe "create_player/4" do
@@ -37,6 +38,35 @@ defmodule MixMonTest do
   end
 
   describe "make_move/1" do
-    assert true == true
+    setup do
+      player = Player.create("Jonh", :kick, :punch, :heal)
+
+      capture_io(fn ->
+        MixMon.start_game(player)
+      end)
+
+      {:ok, player: player}
+    end
+
+    test "when the move is valid, do the move and the computer makes a move" do
+      messages =
+        capture_io(fn ->
+          assert MixMon.make_move(:kick)
+        end)
+
+      assert messages =~ "The Player attacked the computer"
+      assert messages =~ "It's computer turn!"
+      assert messages =~ "It's player turn!"
+      assert messages =~ "status: :continue"
+    end
+
+    test "when the move is invalid, return an error message" do
+      messages =
+        capture_io(fn ->
+          assert MixMon.make_move(:invalid_move)
+        end)
+
+      assert messages =~ "Invalid move: invalid_move"
+    end
   end
 end
