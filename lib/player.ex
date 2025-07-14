@@ -1,9 +1,7 @@
 defmodule MixMon.Player do
   @player_attibutes [
     :hp,
-    :move_avg,
-    :move_heal,
-    :move_rnd,
+    :moves,
     :name
   ]
   @max_hp 100
@@ -14,9 +12,11 @@ defmodule MixMon.Player do
   def create(name, move_rnd, move_avg, move_heal) do
     %MixMon.Player{
       hp: @max_hp,
-      move_avg: move_avg,
-      move_heal: move_heal,
-      move_rnd: move_rnd,
+      moves: %{
+        move_avg: move_avg,
+        move_heal: move_heal,
+        move_rnd: move_rnd
+      },
       name: name
     }
   end

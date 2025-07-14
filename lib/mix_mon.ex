@@ -1,7 +1,6 @@
 defmodule MixMon do
-  alias MixMon.Game
-  alias MixMon.Game.Status
-  alias MixMon.Player
+  alias MixMon.{Game, Player}
+  alias MixMon.Game.{Actions, Status}
 
   @computer_name "Mr. Robot"
 
@@ -15,5 +14,9 @@ defmodule MixMon do
     |> Game.start(player)
 
     Status.print_round_message()
+  end
+
+  def make_move(move) do
+    Actions.fetch_move(move)
   end
 end
