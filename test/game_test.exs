@@ -25,8 +25,8 @@ defmodule MixMon.GameTest do
           name: "Jonh",
           hp: 100,
           moves: %{
-            move_avg: :punch,
-            move_rnd: :kick,
+            move_avg: :kick,
+            move_rnd: :punch,
             move_heal: :heal
           }
         },
@@ -34,8 +34,8 @@ defmodule MixMon.GameTest do
           name: "Computer",
           hp: 100,
           moves: %{
-            move_avg: :punch,
-            move_rnd: :kick,
+            move_avg: :kick,
+            move_rnd: :punch,
             move_heal: :heal
           }
         },
@@ -59,8 +59,8 @@ defmodule MixMon.GameTest do
           name: "Jonh",
           hp: 100,
           moves: %{
-            move_avg: :punch,
-            move_rnd: :kick,
+            move_avg: :kick,
+            move_rnd: :punch,
             move_heal: :heal
           }
         },
@@ -68,8 +68,8 @@ defmodule MixMon.GameTest do
           name: "Computer",
           hp: 100,
           moves: %{
-            move_avg: :punch,
-            move_rnd: :kick,
+            move_avg: :kick,
+            move_rnd: :punch,
             move_heal: :heal
           }
         },
@@ -85,8 +85,8 @@ defmodule MixMon.GameTest do
           name: "Jonh",
           hp: 78,
           moves: %{
-            move_avg: :punch,
-            move_rnd: :kick,
+            move_avg: :kick,
+            move_rnd: :punch,
             move_heal: :heal
           }
         },
@@ -94,8 +94,8 @@ defmodule MixMon.GameTest do
           name: "Computer",
           hp: 12,
           moves: %{
-            move_avg: :punch,
-            move_rnd: :kick,
+            move_avg: :kick,
+            move_rnd: :punch,
             move_heal: :heal
           }
         }

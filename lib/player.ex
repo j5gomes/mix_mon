@@ -9,7 +9,7 @@ defmodule MixMon.Player do
   @enforce_keys @player_attibutes
   defstruct @player_attibutes
 
-  def create(name, move_rnd, move_avg, move_heal) do
+  def create(name, move_avg, move_rnd, move_heal) do
     %MixMon.Player{
       hp: @max_hp,
       moves: %{
